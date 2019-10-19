@@ -19,7 +19,7 @@ def reaction_added(event_data):
   reaction = event.get("reaction")
   channel = event.get("item", {}).get("channel")
   if reaction and channel:
-    slack.chat_postMessage(channel=channel, text="Received reaction: {0}".format(reaction))
+    slack.chat_postMessage(channel=channel, text="Received reaction: `:{0}:`".format(reaction))
   else:
     print("Could not find reaction or channel in event")
 
